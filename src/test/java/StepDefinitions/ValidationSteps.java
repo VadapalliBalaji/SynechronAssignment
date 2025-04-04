@@ -35,10 +35,18 @@ public class ValidationSteps {
 		base.fillDetails(dataTable);
 	}
 	
+	@When("I close browser")
+	public void i_close_browser() {
+		base.quitallwindows();
+}
+
+
+
+	
 
 	@Then("I validate the errors messages in UI")
 	public void i_validate_the_errors_messages_in_ui(DataTable dataTable) 
 	{
-		
+		base.captureErrorDetails(dataTable);		
 	}
 	}

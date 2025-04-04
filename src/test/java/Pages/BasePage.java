@@ -46,7 +46,6 @@ public class BasePage {
 		}
 		else if(linkType.equals("Sauvegarder et Continuer"))
 		{
-			System.out.println("SauvegarderSauvegarderSauvegarderSauvegarder");
 			WebElement button = driver.findElement(By.xpath("//button[@type='submit' and contains(@class, 'css-19hct2l')]"));
 			JavascriptExecutor js = (JavascriptExecutor) driver;
 			js.executeScript("arguments[0].click();", button);
@@ -87,9 +86,14 @@ public class BasePage {
 		{
 			String field = m.get("Field");
 			String message = m.get("ErrorMessage");
-			String inputField = driver.findElement(By.xpath(field)).getText();
+			String inputField = driver.findElement(getLocator(field)).getText();
 			Assert.assertEquals(inputField,message);			
 		}
+	}
+	
+	public void quitallwindows()
+	{
+		driver.close();
 	}
 
 	private By getLocator(String field) {

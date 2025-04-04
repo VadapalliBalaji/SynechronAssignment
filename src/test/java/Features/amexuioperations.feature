@@ -26,4 +26,4 @@ When I fill the form with valid values:
        | NomError | Nom obligatoire.     |
        |Adresse   |Merci de vérifier le format de votre adresse email (exemple : nom@domaine.fr). Les caractères autorisés sont : lettres, chiffres, tirets (_-), arobase (@), et point (.). |
        |overall   |Veuillez corriger les erreurs ci-dessus pour continuer. |
- 
+  When I close browser 
